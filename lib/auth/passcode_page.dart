@@ -65,7 +65,6 @@ class _SampesPageState extends State<PasscodePage>
     }
 
     if (isAuthenticated) {
-      print('User authenticated successfully');
       one = Colors.deepPurpleAccent;
       two = Colors.deepPurpleAccent;
       three = Colors.deepPurpleAccent;
@@ -219,424 +218,859 @@ class _SampesPageState extends State<PasscodePage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(0), // here the desired height
-          child: AppBar(
-            backgroundColor: const Color.fromRGBO(33, 158, 188, 10),
+    if (MediaQuery.of(context).orientation == Orientation.portrait) {
+      return Scaffold(
+          backgroundColor: Colors.white,
+          appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(0), // here the desired height
+            child: AppBar(
+              backgroundColor: const Color.fromRGBO(33, 158, 188, 10),
+            ),
           ),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Expanded(child: Text('')),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.5,
-            ),
-            SvgPicture.asset(
-              'assets/svgs/password_logo.svg',
-              width: MediaQuery.of(context).size.width * 0.55,
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            Text(
-              'Hello, $textism',
-              style: GoogleFonts.fredoka(
-                fontSize: 25,
-                //color: error,
-                fontWeight: FontWeight.w400,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Expanded(child: Text('')),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
               ),
-            ),
-            Text(
-              txtPasswordName,
-              style: GoogleFonts.fredoka(
-                fontSize: 17,
-                //color: error,
-                fontWeight: FontWeight.w400,
+              SvgPicture.asset(
+                'assets/svgs/password_logo.svg',
+                width: MediaQuery.of(context).size.width * 0.55,
               ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
-            ),
-            Row(
-              children: [
-                const Expanded(child: Text('')),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.055,
-                  width: MediaQuery.of(context).size.width * 0.09,
-                  decoration: BoxDecoration(
-                    color: const Color.fromRGBO(238, 238, 238, 100),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                      width: MediaQuery.of(context).size.width * 0.045,
-                      decoration: BoxDecoration(
-                        color: one,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.02,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.055,
-                  width: MediaQuery.of(context).size.width * 0.09,
-                  decoration: BoxDecoration(
-                    color: const Color.fromRGBO(238, 238, 238, 100),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                      width: MediaQuery.of(context).size.width * 0.045,
-                      decoration: BoxDecoration(
-                        color: two,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.02,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.055,
-                  width: MediaQuery.of(context).size.width * 0.09,
-                  decoration: BoxDecoration(
-                    color: const Color.fromRGBO(238, 238, 238, 100),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                      width: MediaQuery.of(context).size.width * 0.045,
-                      decoration: BoxDecoration(
-                        color: three,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.02,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.055,
-                  width: MediaQuery.of(context).size.width * 0.09,
-                  decoration: BoxDecoration(
-                    color: const Color.fromRGBO(238, 238, 238, 100),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                      width: MediaQuery.of(context).size.width * 0.045,
-                      decoration: BoxDecoration(
-                        color: four,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
-                  ),
-                ),
-                const Expanded(child: Text('')),
-              ],
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
-            ),
-            // 1 2 3 text button
-            Row(
-              children: [
-                const Expanded(child: Text('')),
-                TextButton(
-                  onPressed: () {
-                    HapticFeedback.lightImpact();
-                    included = '${included}1';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '1',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.1,
-                ),
-                TextButton(
-                  onPressed: () {
-                    HapticFeedback.lightImpact();
-                    included = '${included}2';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '2',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.1,
-                ),
-                TextButton(
-                  onPressed: () {
-                    HapticFeedback.lightImpact();
-                    included = '${included}3';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '3',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                const Expanded(child: Text('')),
-              ],
-            ),
-            //4 5 6 textButton
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.04,
-            ),
-            Row(
-              children: [
-                const Expanded(child: Text('')),
-                TextButton(
-                  onPressed: () {
-                    HapticFeedback.lightImpact();
-                    included = '${included}4';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '4',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.1,
-                ),
-                TextButton(
-                  onPressed: () {
-                    HapticFeedback.lightImpact();
-                    included = '${included}5';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '5',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.1,
-                ),
-                TextButton(
-                  onPressed: () {
-                    HapticFeedback.lightImpact();
-                    included = '${included}6';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '6',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                const Expanded(child: Text('')),
-              ],
-            ),
-            //7 8 9 text Button
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.04,
-            ),
-            Row(
-              children: [
-                const Expanded(child: Text('')),
-                TextButton(
-                  onPressed: () {
-                    HapticFeedback.lightImpact();
-                    included = '${included}7';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '7',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.1,
-                ),
-                TextButton(
-                  onPressed: () {
-                    HapticFeedback.lightImpact();
-                    included = '${included}8';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '8',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.1,
-                ),
-                TextButton(
-                  onPressed: () {
-                    HapticFeedback.lightImpact();
-                    included = '${included}9';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '9',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                const Expanded(child: Text('')),
-              ],
-            ),
-            //finger print icon 0 and back icon
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.04,
-            ),
-            Row(
-              children: [
-                const Expanded(child: Text('')),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: TextButton(
-                      onPressed: () {
-                        HapticFeedback.lightImpact();
-                        _authenticate();
-                      },
-                      child: SvgPicture.asset(
-                        'assets/svgs/fingerprint_icon.svg',
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        width: MediaQuery.of(context).size.width * 0.09,
-                      )),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.095,
-                ),
-                TextButton(
-                  onPressed: () {
-                    //Vibration.vibrate(duration: 200);
-                    HapticFeedback.lightImpact();
-                    included = '${included}0';
-                    index++;
-                    _onclick();
-                    setState(() {});
-                  },
-                  child: Text(
-                    '0',
-                    style: GoogleFonts.fredoka(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.095,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: TextButton(
-                    onPressed: () {
-                      HapticFeedback.heavyImpact();
-                      if (index == 0) {
-                        index++;
-                      }
-                      index--;
-                      _onback();
-                      setState(() {});
-                    },
-                    child: SvgPicture.asset(
-                      'assets/svgs/back_icon.svg',
-                      height: MediaQuery.of(context).size.height * 0.05,
-                      width: MediaQuery.of(context).size.width * 0.09,
-                    ),
-                  ),
-                ),
-                const Expanded(child: Text('')),
-              ],
-            ),
-            const Expanded(child: Text('')),
-            TextButton(
-              onPressed: () {
-                HapticFeedback.vibrate();
-                logOut();
-              },
-              child: Text(
-                'Forgot Password?',
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
+              Text(
+                'Hello, $textism',
                 style: GoogleFonts.fredoka(
-                  fontSize: 20,
-                  color: Colors.indigo,
+                  fontSize: 25,
+                  //color: error,
                   fontWeight: FontWeight.w400,
                 ),
               ),
+              Text(
+                txtPasswordName,
+                style: GoogleFonts.fredoka(
+                  fontSize: 17,
+                  //color: error,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Row(
+                children: [
+                  const Expanded(child: Text('')),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.055,
+                    width: MediaQuery.of(context).size.width * 0.09,
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(238, 238, 238, 100),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.025,
+                        width: MediaQuery.of(context).size.width * 0.045,
+                        decoration: BoxDecoration(
+                          color: one,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.02,
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.055,
+                    width: MediaQuery.of(context).size.width * 0.09,
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(238, 238, 238, 100),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.025,
+                        width: MediaQuery.of(context).size.width * 0.045,
+                        decoration: BoxDecoration(
+                          color: two,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.02,
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.055,
+                    width: MediaQuery.of(context).size.width * 0.09,
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(238, 238, 238, 100),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.025,
+                        width: MediaQuery.of(context).size.width * 0.045,
+                        decoration: BoxDecoration(
+                          color: three,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.02,
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.055,
+                    width: MediaQuery.of(context).size.width * 0.09,
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(238, 238, 238, 100),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.025,
+                        width: MediaQuery.of(context).size.width * 0.045,
+                        decoration: BoxDecoration(
+                          color: four,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Expanded(child: Text('')),
+                ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              // 1 2 3 text button
+              Row(
+                children: [
+                  const Expanded(child: Text('')),
+                  TextButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      included = '${included}1';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '1',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      included = '${included}2';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '2',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      included = '${included}3';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '3',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  const Expanded(child: Text('')),
+                ],
+              ),
+              //4 5 6 textButton
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.04,
+              ),
+              Row(
+                children: [
+                  const Expanded(child: Text('')),
+                  TextButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      included = '${included}4';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '4',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      included = '${included}5';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '5',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      included = '${included}6';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '6',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  const Expanded(child: Text('')),
+                ],
+              ),
+              //7 8 9 text Button
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.04,
+              ),
+              Row(
+                children: [
+                  const Expanded(child: Text('')),
+                  TextButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      included = '${included}7';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '7',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      included = '${included}8';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '8',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      included = '${included}9';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '9',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  const Expanded(child: Text('')),
+                ],
+              ),
+              //finger print icon 0 and back icon
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.04,
+              ),
+              Row(
+                children: [
+                  const Expanded(child: Text('')),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: TextButton(
+                        onPressed: () {
+                          HapticFeedback.lightImpact();
+                          _authenticate();
+                        },
+                        child: SvgPicture.asset(
+                          'assets/svgs/fingerprint_icon.svg',
+                          height: MediaQuery.of(context).size.height * 0.05,
+                          width: MediaQuery.of(context).size.width * 0.09,
+                        )),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.095,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      //Vibration.vibrate(duration: 200);
+                      HapticFeedback.lightImpact();
+                      included = '${included}0';
+                      index++;
+                      _onclick();
+                      setState(() {});
+                    },
+                    child: Text(
+                      '0',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.095,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: TextButton(
+                      onPressed: () {
+                        HapticFeedback.heavyImpact();
+                        if (index == 0) {
+                          index++;
+                        }
+                        index--;
+                        _onback();
+                        setState(() {});
+                      },
+                      child: SvgPicture.asset(
+                        'assets/svgs/back_icon.svg',
+                        height: MediaQuery.of(context).size.height * 0.05,
+                        width: MediaQuery.of(context).size.width * 0.09,
+                      ),
+                    ),
+                  ),
+                  const Expanded(child: Text('')),
+                ],
+              ),
+              const Expanded(child: Text('')),
+              TextButton(
+                onPressed: () {
+                  HapticFeedback.vibrate();
+                  logOut();
+                },
+                child: Text(
+                  'Forgot Password?',
+                  style: GoogleFonts.fredoka(
+                    fontSize: 20,
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ],
+          ));
+    }else{
+      return Scaffold(
+          backgroundColor: Colors.white,
+          appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(0), // here the desired height
+            child: AppBar(
+              backgroundColor: const Color.fromRGBO(33, 158, 188, 10),
             ),
-          ],
-        ));
+          ),
+          body: Row(
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Column(
+                  children: [
+                    const Expanded(child: Text('')),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.5,
+                    ),
+                    SvgPicture.asset(
+                      'assets/svgs/password_logo.svg',
+                      width: MediaQuery.of(context).size.width * 0.2,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.01,
+                    ),
+                    Text(
+                      'Hello, $textism',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 25,
+                        //color: error,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Text(
+                      txtPasswordName,
+                      style: GoogleFonts.fredoka(
+                        fontSize: 17,
+                        //color: error,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.03,
+                    ),
+                    Row(
+                      children: [
+                        const Expanded(child: Text('')),
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.06,
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(238, 238, 238, 100),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Container(
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              width: MediaQuery.of(context).size.width * 0.021,
+                              decoration: BoxDecoration(
+                                color: one,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.02,
+                        ),
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.06,
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(238, 238, 238, 100),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Container(
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              width: MediaQuery.of(context).size.width * 0.021,
+                              decoration: BoxDecoration(
+                                color: two,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.02,
+                        ),
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.06,
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(238, 238, 238, 100),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Container(
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              width: MediaQuery.of(context).size.width * 0.021,
+                              decoration: BoxDecoration(
+                                color: three,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.02,
+                        ),
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.06,
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(238, 238, 238, 100),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Container(
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              width: MediaQuery.of(context).size.width * 0.021,
+                              decoration: BoxDecoration(
+                                color: four,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Expanded(child: Text('')),
+                      ],
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.25,
+                    ),
+                    const Expanded(child: Text('')),
+                  ],
+                ),
+              ),
+
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Column(
+                  children: [
+                    const Expanded(child: Text('')),
+                    Row(
+                      children: [
+                        const Expanded(child: Text('')),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.lightImpact();
+                            included = '${included}1';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '1',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.lightImpact();
+                            included = '${included}2';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '2',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.lightImpact();
+                            included = '${included}3';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '3',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        const Expanded(child: Text('')),
+                      ],
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.04,
+                    ),
+                    Row(
+                      children: [
+                        const Expanded(child: Text('')),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.lightImpact();
+                            included = '${included}4';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '4',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.lightImpact();
+                            included = '${included}5';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '5',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.lightImpact();
+                            included = '${included}6';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '6',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        const Expanded(child: Text('')),
+                      ],
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.04,
+                    ),
+                    Row(
+                      children: [
+                        const Expanded(child: Text('')),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.lightImpact();
+                            included = '${included}7';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '7',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.lightImpact();
+                            included = '${included}8';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '8',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.lightImpact();
+                            included = '${included}9';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '9',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        const Expanded(child: Text('')),
+                      ],
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.04,
+                    ),
+                    Row(
+                      children: [
+                        const Expanded(child: Text('')),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: TextButton(
+                              onPressed: () {
+                                HapticFeedback.lightImpact();
+                                _authenticate();
+                              },
+                              child: SvgPicture.asset(
+                                'assets/svgs/fingerprint_icon.svg',
+                                height: MediaQuery.of(context).size.height * 0.05,
+                                width: MediaQuery.of(context).size.width * 0.09,
+                              )),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.095,
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            //Vibration.vibrate(duration: 200);
+                            HapticFeedback.lightImpact();
+                            included = '${included}0';
+                            index++;
+                            _onclick();
+                            setState(() {});
+                          },
+                          child: Text(
+                            '0',
+                            style: GoogleFonts.fredoka(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.095,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: TextButton(
+                            onPressed: () {
+                              HapticFeedback.heavyImpact();
+                              if (index == 0) {
+                                index++;
+                              }
+                              index--;
+                              _onback();
+                              setState(() {});
+                            },
+                            child: SvgPicture.asset(
+                              'assets/svgs/back_icon.svg',
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              width: MediaQuery.of(context).size.width * 0.09,
+                            ),
+                          ),
+                        ),
+                        const Expanded(child: Text('')),
+                      ],
+                    ),
+
+                    const Expanded(child: Text('')),
+                    TextButton(
+                      onPressed: () {
+                        HapticFeedback.vibrate();
+                        logOut();
+                      },
+                      child: Text(
+                        'Forgot Password?',
+                        style: GoogleFonts.fredoka(
+                          fontSize: 20,
+                          color: Colors.indigo,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+    }
   }
 }

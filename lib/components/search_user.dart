@@ -1253,7 +1253,7 @@ class _ComUserSearchState extends State<ComUserSearch> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.698,
+            height: MediaQuery.of(context).size.height * 0.62,
             child: ListView.builder(
               itemCount: useerrlist.length,
               itemBuilder: (context, index) {
