@@ -185,7 +185,7 @@ class _SampesPageState extends State<LoginPage>
                           width: 2),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: TextField(
+                    /*child: TextField(
                       cursorColor: Colors.deepPurpleAccent,
                       controller: _password,
                       textAlign: TextAlign.left,
@@ -198,6 +198,28 @@ class _SampesPageState extends State<LoginPage>
                       decoration: InputDecoration(
                         contentPadding:
                             const EdgeInsets.only(left: 10, right: 10),
+                        border: InputBorder.none,
+                        hintText: 'Password',
+                        hintStyle: GoogleFonts.fredoka(
+                            fontSize: 17,
+                            color: Colors.black54,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),*/
+                    //text fild password
+                    child: TextField(
+                      cursorColor: Colors.deepPurpleAccent,
+                      controller: _password,
+                      textAlign: TextAlign.left,
+                      style: GoogleFonts.fredoka(
+                        fontSize: 20,
+                        color: error,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      textInputAction: TextInputAction.next,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.only(left: 10, right: 10),
                         border: InputBorder.none,
                         hintText: 'Password',
                         hintStyle: GoogleFonts.fredoka(
